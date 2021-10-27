@@ -300,19 +300,21 @@ console.log(average);
 
 
 //10
-let password;
-
 for (var i = 0; ; i++) {
     var password = prompt("Введите пароль");
     if (password == "admin") {
         alert("Вы успешно авторизованы!")
         break;
     } else if (password == '' || password == null) {
-        confirm("Вы уверены, что хотите отменить авторизацию?")
+        let cancel = confirm("Вы уверены, что хотите отменить авторизацию?");
+        if (!cancel) {
+            password = prompt("Введите пароль");
+        } else {
+            alert("Вы отменили авторизацию")
+            break;
+        }
     }
 }
-
-//доделаю
 
 
 
